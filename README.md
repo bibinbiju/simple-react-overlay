@@ -6,7 +6,7 @@ An overlay popup menu for individual component
 # install
 
 ``` bash 
-yarn add react-overlay-menu | npm i react-overlay-menu
+yarn add simple-react-overlay | npm i simple-react-overlay
 ```
 
 # usage
