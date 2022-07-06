@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import styled from 'styled-components';
-import DropDownOverlay from './lib/components/dropDownOverlay';
+import ReactOverlay from './lib';
 const SimpleMenu = () => {
   return (
     <DropUl >
@@ -16,11 +16,11 @@ function App() {
   
   return (
     <div >
-      <DropDownOverlay  overlay={<SimpleMenu/>} trigger={['click']}>
+      <ReactOverlay  overlay={<SimpleMenu/>} trigger={['click']}>
       <button>
         Click Menu
       </button>
-      </DropDownOverlay>
+      </ReactOverlay>
     </div>
   );
 }
