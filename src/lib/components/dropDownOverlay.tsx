@@ -83,7 +83,6 @@ export default DropDownOverlay;
 
 const DropList = styled.div<any>`
     position:absolute;
-    // border:1px solid red;
     top:${(props) => `${props.offsetPos.y}px`};
     z-index:99999;
     ${props => css`${((window.innerWidth / 2) < props.offsetPos.x) ? 'right:' + (window.innerWidth - props.offsetPos.x) + 'px' : 'left:' + props.offsetPos.x + 'px'}`}

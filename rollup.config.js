@@ -8,22 +8,23 @@ const packageJson = require("./package.json");
 const data =  {
     input: "src/lib/index.ts",
     output: [
-        {
-            file: packageJson.main,
-            format: "cjs",
-            sourcemap: false
-        },
         // {
-        //     file: packageJson.module,
-        //     format: "esm",
-        //     sourcemap: true
-        // }
+        //     file: packageJson.main,
+        //     format: "cjs",
+        //     sourcemap: false,
+        //     exports:'named',
+        // },
+        {
+            file: packageJson.module,
+            format: "esm",
+            sourcemap: false
+        }
     ],
     plugins: [
         peerDepsExternal(),
         resolve(),
         commonjs(),
-        typescript({ useTsconfigDeclarationDir: true })
+        typescript({ useTsconfigDeclarationDir: false })
     ]
 };
 export default data;

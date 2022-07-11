@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import ReactOverlay from './lib';
 const SimpleMenu = () => {
@@ -9,8 +10,6 @@ const SimpleMenu = () => {
   )
 }
 function App() {
-  
-  
   return (
     <div >
       <ReactOverlay  overlay={<SimpleMenu/>} trigger={['click']}>
