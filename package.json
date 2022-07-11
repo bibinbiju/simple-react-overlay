@@ -11,6 +11,7 @@
     "popover menu"
   ],
   "author": "Bibin Biju",
+  "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
