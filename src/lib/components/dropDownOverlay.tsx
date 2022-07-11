@@ -81,10 +81,6 @@ const DropDownOverlay = ({ children, overlay, trigger = ['click'] }: AppProps) =
 }
 export default DropDownOverlay;
 
-const DropDownOverlayWrapper = styled.div`
-    position:relative;
-`;
-
 const DropList = styled.div<any>`
     position:absolute;
     // border:1px solid red;
