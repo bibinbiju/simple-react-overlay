@@ -1,6 +1,6 @@
 {
   "name": "simple-react-overlay",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "private": false,
   "description": "A helper component for invoking react overlay menus",
   "keywords": [
@@ -12,20 +12,23 @@
   ],
   "author": "Bibin Biju",
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "build/index.js",
+  "module": "build/index.esm.js",
   "files": [
-    "dist",
-    "README.md"
+    "build"
   ],
+  "types": "build/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bibinbiju/simple-react-overlay.git"
+    "url": "https://github.com/bibinbiju/simple-react-overlay"
   },
+  "homepage": "https://github.com/bibinbiju/simple-react-overlay",
   "dependencies": {},
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
+    "build": "rm -rf build && rollup -c",
+    "build:esm": "tsc --module es2015 --target es5 --outDir dist/esm",
+    "build:cjs": "tsc --module commonjs --target es5 --outDir dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -47,12 +50,18 @@
       "last 1 safari version"
     ]
   },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.5"
+  },
   "devDependencies": {
     "@babel/cli": "^7.18.6",
     "@babel/core": "^7.18.6",
-    "@babel/preset-env": "^7.18.6",
-    "@types/styled-components": "^5.1.25",
     "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.18.6",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -60,11 +69,18 @@
     "@types/node": "^16.11.43",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "@types/styled-components": "^5.1.25",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "rollup": "^2.76.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.32.1",
     "styled-components": "^5.3.5",
     "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"
+  },
+  "bugs": {
+    "url": "https://github.com/bibinbiju/simple-react-overlay/issues"
   }
 }
